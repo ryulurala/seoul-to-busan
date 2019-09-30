@@ -62,6 +62,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\minimap.cs" />
     <Compile Include="Assets\Scripts\touchZoom.cs" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>C:/Users/CSR/Desktop/대학 자료/3-2/Co-op 실감형게임 콘텐츠개발 트랙/personalGame/디자인 자료/personal_project/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
