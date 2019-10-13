@@ -11,7 +11,7 @@ public class minimap : MonoBehaviour
     void LateUpdate()
     {
         Vector3 newPosition = map.position;
-        newPosition.z = map.position.z - 200;
+        newPosition.z = map.position.z;
         newPosition.y = transform.position.y;
         transform.position = newPosition;
 
