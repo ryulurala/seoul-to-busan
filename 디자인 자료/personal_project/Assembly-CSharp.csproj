@@ -62,8 +62,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\BarController.cs" />
+    <Compile Include="Assets\Scripts\ClickToMove.cs" />
     <Compile Include="Assets\Scripts\DayAndNight.cs" />
+    <Compile Include="Assets\Scripts\FollowNumber.cs" />
     <Compile Include="Assets\Scripts\minimap.cs" />
+    <Compile Include="Assets\Scripts\Population.cs" />
     <Compile Include="Assets\Scripts\ScrollAndPinch.cs" />
     <Compile Include="Assets\Scripts\WaterMakeNoise.cs" />
     <Compile Include="Assets\Scripts\WaterPlaneGenerate.cs" />
