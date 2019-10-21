@@ -69,6 +69,7 @@
     <Compile Include="Assets\Scripts\minimap.cs" />
     <Compile Include="Assets\Scripts\Population.cs" />
     <Compile Include="Assets\Scripts\ScrollAndPinch.cs" />
+    <Compile Include="Assets\Scripts\SelectOutline.cs" />
     <Compile Include="Assets\Scripts\WaterMakeNoise.cs" />
     <Compile Include="Assets\Scripts\WaterPlaneGenerate.cs" />
     <None Include="Assets\Materials\Water Shader\Water_Shader.shader" />
