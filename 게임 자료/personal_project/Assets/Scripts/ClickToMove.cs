@@ -9,6 +9,8 @@ public class ClickToMove : MonoBehaviour
 
     private NavMeshAgent mNavMeshAgent;
 
+    public Camera minimapCamera;
+    
     private bool mRunning = false;
 
     // Start is called before the first frame update
@@ -21,7 +23,7 @@ public class ClickToMove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        Ray ray = minimapCamera.ScreenPointToRay(Input.mousePosition);
 
         RaycastHit hit;
 
@@ -30,6 +32,7 @@ public class ClickToMove : MonoBehaviour
             if(Physics.Raycast(ray, out hit, 100))
             {
                 mNavMeshAgent.destination = hit.point;
+                Debug.Log("Hit!");
             }
         }
 
