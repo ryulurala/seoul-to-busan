@@ -8,33 +8,25 @@ public class ClickToMove : MonoBehaviour
     private Animator mAnimator;
 
     private NavMeshAgent mNavMeshAgent;
-
-    public Camera minimapCamera;
     
     private bool mRunning = false;
+
+    [SerializeField]
+    private GameObject destination;
 
     // Start is called before the first frame update
     void Start()
     {
         mAnimator = GetComponent<Animator>();
         mNavMeshAgent = GetComponent<NavMeshAgent>();
+        destination = GameObject.Find("Person").GetComponent<PersonManager>().destMap;
     }
 
     // Update is called once per frame
     void Update()
     {
-        Ray ray = minimapCamera.ScreenPointToRay(Input.mousePosition);
-
-        RaycastHit hit;
-
-        if(Input.GetMouseButtonDown(0))
-        {
-            if(Physics.Raycast(ray, out hit, 100))
-            {
-                mNavMeshAgent.destination = hit.point;
-                Debug.Log("Hit!");
-            }
-        }
+        mNavMeshAgent.SetDestination(destination.transform.position);
+       
 
         if(mNavMeshAgent.remainingDistance <= mNavMeshAgent.stoppingDistance)
         {

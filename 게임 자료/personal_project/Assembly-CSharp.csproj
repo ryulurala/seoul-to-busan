@@ -66,9 +66,8 @@
     <Compile Include="Assets\Scripts\CharacterCamera.cs" />
     <Compile Include="Assets\Scripts\ClickToMove.cs" />
     <Compile Include="Assets\Scripts\DayAndNight.cs" />
-    <Compile Include="Assets\Scripts\FollowNumber.cs" />
     <Compile Include="Assets\Scripts\MinimapClick.cs" />
-    <Compile Include="Assets\Scripts\Population.cs" />
+    <Compile Include="Assets\Scripts\PersonManager.cs" />
     <Compile Include="Assets\Scripts\WaterMakeNoise.cs" />
     <Compile Include="Assets\Scripts\WaterPlaneGenerate.cs" />
     <None Include="Assets\Materials\Water Shader\Water_Shader.shader" />
