@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6284823958985013418}
   - component: {fileID: 6284823958985013417}
   m_Layer: 5
-  m_Name: Bar
+  m_Name: caveNumberPrefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -28,7 +28,7 @@ RectTransform:
   m_GameObject: {fileID: 6284823958985013416}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.8938548, y: 0.8938548, z: 0.8938548}
+  m_LocalScale: {x: 1.2, y: 1.2, z: 1.2}
   m_Children:
   - {fileID: 6284823959692884076}
   - {fileID: 6284823959349921831}

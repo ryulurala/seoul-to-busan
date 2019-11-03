@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class DayAndNight : MonoBehaviour
 {
-    [SerializeField] private float secondPerRealTimeSecond; // 게임 세계의 100초 = 현실 세계의 1초
+    [SerializeField] private float secondPerRealTimeSecond = 0.0f; // 게임 세계의 100초 = 현실 세계의 1초
 
     private bool isNight = false;
 

@@ -11,8 +11,7 @@ public class BarController : MonoBehaviour
 
     private float whiteBarWidth;
 
-    [SerializeField]
-    private int maxNumber;
+    public int maxNumber = 0;
 
     // Start is called before the first frame update
     void Start()

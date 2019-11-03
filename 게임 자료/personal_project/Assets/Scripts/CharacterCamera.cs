@@ -5,7 +5,7 @@ using UnityEngine;
 public class CharacterCamera : MonoBehaviour
 {
 
-    public Transform CharacterTransform;
+    public Transform CharacterTransform = null;
 
     [Range(0.01f, 1.0f)]
     public float SmoothSpeed = 0.125f;

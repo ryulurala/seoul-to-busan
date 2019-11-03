@@ -63,6 +63,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\BarController.cs" />
+    <Compile Include="Assets\Scripts\CameraSwitch.cs" />
+    <Compile Include="Assets\Scripts\CaveDefault.cs" />
+    <Compile Include="Assets\Scripts\CaveManager.cs" />
     <Compile Include="Assets\Scripts\CharacterCamera.cs" />
     <Compile Include="Assets\Scripts\ClickToMove.cs" />
     <Compile Include="Assets\Scripts\DayAndNight.cs" />

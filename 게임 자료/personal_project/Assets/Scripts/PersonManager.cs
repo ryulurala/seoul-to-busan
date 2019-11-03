@@ -6,21 +6,23 @@ using UnityEngine.UI;
 public class PersonManager : MonoBehaviour
 {
     [SerializeField]
-    Canvas canvas;
+    GameObject personNumber = null;
 
     [SerializeField]
-    GameObject numberPrefab;
+    GameObject personNumberPrefab = null;
 
     [SerializeField]
-    GameObject copyObject;
+    GameObject Character = null;
 
     public Text startingPoint;
     public Text middle;
     public Text destination;
     
-    private GameObject resourceMap;
+    private GameObject resourceMap = null;
     
-    public GameObject destMap;
+    public GameObject destMap = null;
+
+    public GameObject PersonList = null;
 
     Camera mCamera;
 
@@ -42,13 +44,13 @@ public class PersonManager : MonoBehaviour
         //둘다 선택 되었을 때
         if (check == 0) // 0
         {
-            persons.Add(Instantiate(copyObject, resourceMap.transform.position, Quaternion.identity, transform));
+            persons.Add(Instantiate(Character, resourceMap.transform.position, Quaternion.identity, transform));
             check = -1;
 
             personTransform.Add(persons[persons.Count-1].transform); // 캐릭터 위치 저장
             mCamera.GetComponent<CharacterCamera>().CharacterTransform = personTransform[personTransform.Count-1]; // 캐릭터 카메라 선택
 
-            mNumberList.Add(Instantiate(numberPrefab, persons[persons.Count - 1].transform.position, Quaternion.identity, canvas.transform)); // bar 추가
+            mNumberList.Add(Instantiate(personNumberPrefab, personTransform[personTransform.Count-1].position, Quaternion.identity, personNumber.transform)); // bar 추가
             
             // 초기화
             resourceMap = null;
