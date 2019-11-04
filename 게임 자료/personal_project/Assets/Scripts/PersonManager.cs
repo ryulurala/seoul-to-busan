@@ -50,7 +50,14 @@ public class PersonManager : MonoBehaviour
             personTransform.Add(persons[persons.Count-1].transform); // 캐릭터 위치 저장
             mCamera.GetComponent<CharacterCamera>().CharacterTransform = personTransform[personTransform.Count-1]; // 캐릭터 카메라 선택
 
-            mNumberList.Add(Instantiate(personNumberPrefab, personTransform[personTransform.Count-1].position, Quaternion.identity, personNumber.transform)); // bar 추가
+            GameObject bar = Instantiate(personNumberPrefab, personTransform[personTransform.Count - 1].position, Quaternion.identity, personNumber.transform);
+
+            int cavePopulDivide = resourceMap.GetComponent<CaveDefault>().population/2;
+            bar.GetComponent<Text>().text = cavePopulDivide.ToString();
+            destMap.GetComponent<CaveDefault>().population -= cavePopulDivide;
+
+
+            mNumberList.Add(bar); // bar 추가
             
             // 초기화
             resourceMap = null;

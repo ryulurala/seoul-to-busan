@@ -23,17 +23,17 @@ public class CaveDefault : MonoBehaviour
     [SerializeField]
     private float increaseSpeed;
 
-    private bool isDefault = true;
+    private bool isDefault = false;
 
     Camera mCamera;
 
     // Start is called before the first frame update
     void Start()
     {
-        caveNumber = Instantiate(caveNumberPrefab, this.transform.position, Quaternion.identity, caveNumberList.transform);
         mCamera = Camera.main;
+        caveNumber = Instantiate(caveNumberPrefab, this.transform.position, Quaternion.identity, caveNumberList.transform);
         caveNumber.GetComponent<BarController>().maxNumber = maxPopulation;
-
+        population = 50;
     }
 
     // Update is called once per frame
@@ -41,6 +41,7 @@ public class CaveDefault : MonoBehaviour
     {
         if (isDefault)
         {
+            Debug.Log("isDefault = false");
             if (population > defaultPopulation)
             {
                 population -= defaultPopulation;
@@ -56,7 +57,9 @@ public class CaveDefault : MonoBehaviour
         }
         else if (!isDefault)
         {
+            Debug.Log("isDefault = false");
             population += (int)(increaseSpeed * Time.deltaTime);
+
             caveNumber.GetComponentInChildren<Text>().text = population.ToString();
             caveNumber.transform.position = mCamera.WorldToScreenPoint(this.transform.position + new Vector3(0, 0.6f, 0));
         }
