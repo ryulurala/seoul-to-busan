@@ -17,18 +17,18 @@ public class PersonManager : MonoBehaviour
     public Text startingPoint;
     public Text middle;
     public Text destination;
-    
-    private GameObject resourceMap = null;
-    
-    public GameObject destMap = null;
 
-    public GameObject PersonList = null;
+    [HideInInspector]
+    public GameObject resourceMap = null;
+    [HideInInspector]
+    public GameObject destMap = null;
 
     Camera mCamera;
 
     private int check = -1;
     private bool isStart = false;
 
+    // 생길 때도 한꺼번에, 지울 때도 한꺼번에
     public List<GameObject> persons = new List<GameObject>(); // person
     public List<GameObject> mNumberList = new List<GameObject>(); // bar
     public List<Transform> personTransform = new List<Transform>(); // persons의 transform
@@ -53,8 +53,9 @@ public class PersonManager : MonoBehaviour
             GameObject bar = Instantiate(personNumberPrefab, personTransform[personTransform.Count - 1].position, Quaternion.identity, personNumber.transform);
 
             int cavePopulDivide = resourceMap.GetComponent<CaveDefault>().population/2;
+
             bar.GetComponent<Text>().text = cavePopulDivide.ToString();
-            destMap.GetComponent<CaveDefault>().population -= cavePopulDivide;
+            resourceMap.GetComponent<CaveDefault>().population -= cavePopulDivide; // resourceMap에 차감
 
 
             mNumberList.Add(bar); // bar 추가
@@ -67,6 +68,8 @@ public class PersonManager : MonoBehaviour
         {
             mNumberList[i].transform.position = mCamera.WorldToScreenPoint(personTransform[i].position + new Vector3(0, 0.6f, 0));
         }
+        
+
     }
 
     public void SeoulClick()
@@ -76,10 +79,13 @@ public class PersonManager : MonoBehaviour
             destMap = null;
             destination.text = null;
             resourceMap = GameObject.Find("S_C");
-            startingPoint.text = "서울";
-            middle.text = "->";
-            check = 1;
-            isStart = true;
+            if (resourceMap.GetComponent<CaveDefault>().population > 0)
+            {
+                startingPoint.text = "서울";
+                middle.text = "->";
+                check = 1;
+                isStart = true;
+            }
         }
         else if (isStart && check != 1)
         {
@@ -97,10 +103,13 @@ public class PersonManager : MonoBehaviour
             destMap = null;
             destination.text = null;
             resourceMap = GameObject.Find("In_C");
-            startingPoint.text = "인천";
-            middle.text = "->";
-            check = 2;
-            isStart = true;
+            if (resourceMap.GetComponent<CaveDefault>().population > 0)
+            {
+                startingPoint.text = "인천";
+                middle.text = "->";
+                check = 2;
+                isStart = true;
+            }
         }
         else if (isStart && check != 2)
         {
@@ -119,10 +128,13 @@ public class PersonManager : MonoBehaviour
             destMap = null;
             destination.text = null;
             resourceMap = GameObject.Find("G_C");
-            startingPoint.text = "경기도";
-            middle.text = "->";
-            check = 3;
-            isStart = true;
+            if (resourceMap.GetComponent<CaveDefault>().population > 0)
+            {
+                startingPoint.text = "경기도";
+                middle.text = "->";
+                check = 3;
+                isStart = true;
+            }
         }
         else if (isStart && check != 3)
         {
@@ -141,10 +153,13 @@ public class PersonManager : MonoBehaviour
             destMap = null;
             destination.text = null;
             resourceMap = GameObject.Find("GA_C");
-            startingPoint.text = "강원도";
-            middle.text = "->";
-            check = 4;
-            isStart = true;
+            if (resourceMap.GetComponent<CaveDefault>().population > 0)
+            {
+                startingPoint.text = "강원도";
+                middle.text = "->";
+                check = 4;
+                isStart = true;
+            }
         }
         else if (isStart && check != 4)
         {
@@ -162,10 +177,13 @@ public class PersonManager : MonoBehaviour
             destMap = null;
             destination.text = null;
             resourceMap = GameObject.Find("CHB_C");
-            startingPoint.text = "충청북도";
-            middle.text = "->";
-            check = 5;
-            isStart = true;
+            if (resourceMap.GetComponent<CaveDefault>().population > 0)
+            {
+                startingPoint.text = "충청북도";
+                middle.text = "->";
+                check = 5;
+                isStart = true;
+            }
         }
         else if (isStart && check != 5)
         {
@@ -184,10 +202,13 @@ public class PersonManager : MonoBehaviour
             destMap = null;
             destination.text = null;
             resourceMap = GameObject.Find("CHN_C");
-            startingPoint.text = "충청남도";
-            middle.text = "->";
-            check = 6;
-            isStart = true;
+            if (resourceMap.GetComponent<CaveDefault>().population > 0)
+            {
+                startingPoint.text = "충청남도";
+                middle.text = "->";
+                check = 6;
+                isStart = true;
+            }
         }
         else if (isStart && check != 6)
         {
@@ -206,10 +227,13 @@ public class PersonManager : MonoBehaviour
             destMap = null;
             destination.text = null;
             resourceMap = GameObject.Find("DAEJEON_C");
-            startingPoint.text = "대전";
-            middle.text = "->";
-            check = 7;
-            isStart = true;
+            if (resourceMap.GetComponent<CaveDefault>().population > 0)
+            {
+                startingPoint.text = "대전";
+                middle.text = "->";
+                check = 7;
+                isStart = true;
+            }
         }
         else if (isStart && check != 7)
         {
@@ -228,10 +252,13 @@ public class PersonManager : MonoBehaviour
             destMap = null;
             destination.text = null;
             resourceMap = GameObject.Find("GB_C");
-            startingPoint.text = "경상북도";
-            middle.text = "->";
-            check = 8;
-            isStart = true;
+            if (resourceMap.GetComponent<CaveDefault>().population > 0)
+            {
+                startingPoint.text = "경상북도";
+                middle.text = "->";
+                check = 8;
+                isStart = true;
+            }
         }
         else if (isStart && check != 8)
         {
@@ -250,10 +277,13 @@ public class PersonManager : MonoBehaviour
             destMap = null;
             destination.text = null;
             resourceMap = GameObject.Find("GN_C");
-            startingPoint.text = "경상남도";
-            middle.text = "->";
-            check = 9;
-            isStart = true;
+            if (resourceMap.GetComponent<CaveDefault>().population > 0)
+            {
+                startingPoint.text = "경상남도";
+                middle.text = "->";
+                check = 9;
+                isStart = true;
+            }
         }
         else if (isStart && check != 9)
         {
@@ -272,10 +302,13 @@ public class PersonManager : MonoBehaviour
             destMap = null;
             destination.text = null;
             resourceMap = GameObject.Find("DAEGU_C");
-            startingPoint.text = "대구";
-            middle.text = "->";
-            check = 10;
-            isStart = true;
+            if (resourceMap.GetComponent<CaveDefault>().population > 0)
+            {
+                startingPoint.text = "대구";
+                middle.text = "->";
+                check = 10;
+                isStart = true;
+            }
         }
         else if (isStart && check != 10)
         {
@@ -294,10 +327,13 @@ public class PersonManager : MonoBehaviour
             destMap = null;
             destination.text = null;
             resourceMap = GameObject.Find("WOO_C");
-            startingPoint.text = "울산";
-            middle.text = "->";
-            check = 11;
-            isStart = true;
+            if (resourceMap.GetComponent<CaveDefault>().population > 0)
+            {
+                startingPoint.text = "울산";
+                middle.text = "->";
+                check = 11;
+                isStart = true;
+            }
         }
         else if (isStart && check != 11)
         {
@@ -316,10 +352,13 @@ public class PersonManager : MonoBehaviour
             destMap = null;
             destination.text = null;
             resourceMap = GameObject.Find("BU_C");
-            startingPoint.text = "부산";
-            middle.text = "->";
-            check = 12;
-            isStart = true;
+            if (resourceMap.GetComponent<CaveDefault>().population > 0)
+            {
+                startingPoint.text = "부산";
+                middle.text = "->";
+                check = 12;
+                isStart = true;
+            }
         }
         else if (isStart && check != 12)
         {
@@ -338,10 +377,13 @@ public class PersonManager : MonoBehaviour
             destMap = null;
             destination.text = null;
             resourceMap = GameObject.Find("JB_C");
-            startingPoint.text = "전라북도";
-            middle.text = "->";
-            check = 13;
-            isStart = true;
+            if (resourceMap.GetComponent<CaveDefault>().population > 0)
+            {
+                startingPoint.text = "전라북도";
+                middle.text = "->";
+                check = 13;
+                isStart = true;
+            }
         }
         else if (isStart && check != 13)
         {
@@ -359,10 +401,13 @@ public class PersonManager : MonoBehaviour
             destMap = null;
             destination.text = null;
             resourceMap = GameObject.Find("JN_C");
-            startingPoint.text = "전라남도";
-            middle.text = "->";
-            check = 14;
-            isStart = true;
+            if (resourceMap.GetComponent<CaveDefault>().population > 0)
+            {
+                startingPoint.text = "전라남도";
+                middle.text = "->";
+                check = 14;
+                isStart = true;
+            }
         }
         else if (isStart && check != 14)
         {
@@ -381,10 +426,13 @@ public class PersonManager : MonoBehaviour
             destMap = null;
             destination.text = null;
             resourceMap = GameObject.Find("GW_C");
-            startingPoint.text = "광주";
-            middle.text = "->";
-            check = 15;
-            isStart = true;
+            if (resourceMap.GetComponent<CaveDefault>().population > 0)
+            {
+                startingPoint.text = "광주";
+                middle.text = "->";
+                check = 15;
+                isStart = true;
+            }
         }
         else if (isStart && check != 15)
         {
@@ -402,10 +450,13 @@ public class PersonManager : MonoBehaviour
             destMap = null;
             destination.text = null;
             resourceMap = GameObject.Find("JE_C");
-            startingPoint.text = "제주도";
-            middle.text = "->";
-            check = 16;
-            isStart = true;
+            if (resourceMap.GetComponent<CaveDefault>().population > 0)
+            {
+                startingPoint.text = "제주도";
+                middle.text = "->";
+                check = 16;
+                isStart = true;
+            }
         }
         else if (isStart && check != 16)
         {
@@ -424,10 +475,13 @@ public class PersonManager : MonoBehaviour
             destMap = null;
             destination.text = null;
             resourceMap = GameObject.Find("Dok_C");
-            startingPoint.text = "독도";
-            middle.text = "->";
-            check = 17;
-            isStart = true;
+            if (resourceMap.GetComponent<CaveDefault>().population > 0)
+            {
+                startingPoint.text = "독도";
+                middle.text = "->";
+                check = 17;
+                isStart = true;
+            }
         }
         else if (isStart && check != 17)
         {

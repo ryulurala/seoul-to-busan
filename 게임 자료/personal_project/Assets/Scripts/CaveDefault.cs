@@ -12,6 +12,8 @@ public class CaveDefault : MonoBehaviour
     GameObject caveNumberPrefab = null;
     GameObject caveNumber;
 
+    private GameObject personManager;
+
     [SerializeField]
     private int defaultPopulation;
 
@@ -20,20 +22,23 @@ public class CaveDefault : MonoBehaviour
 
     public int population;
 
+    [Range(1.0f, 8.0f)]
     [SerializeField]
     private float increaseSpeed;
 
-    private bool isDefault = false;
+    public bool isDefault;
+    private bool isDestroy = false;
 
     Camera mCamera;
 
     // Start is called before the first frame update
     void Start()
     {
+        isDefault = true;
         mCamera = Camera.main;
         caveNumber = Instantiate(caveNumberPrefab, this.transform.position, Quaternion.identity, caveNumberList.transform);
         caveNumber.GetComponent<BarController>().maxNumber = maxPopulation;
-        population = 50;
+        personManager = GameObject.Find("Person");
     }
 
     // Update is called once per frame
@@ -41,7 +46,7 @@ public class CaveDefault : MonoBehaviour
     {
         if (isDefault)
         {
-            Debug.Log("isDefault = false");
+            
             if (population > defaultPopulation)
             {
                 population -= defaultPopulation;
@@ -52,16 +57,38 @@ public class CaveDefault : MonoBehaviour
                 defaultPopulation -= population;
             }
             caveNumber.GetComponentInChildren<Text>().text = defaultPopulation.ToString();
-            
+            caveNumber.GetComponentInChildren<Text>().color = Color.white;
             caveNumber.transform.position = mCamera.WorldToScreenPoint(this.transform.position + new Vector3(0, 0.6f, 0));
         }
         else if (!isDefault)
         {
-            Debug.Log("isDefault = false");
-            population += (int)(increaseSpeed * Time.deltaTime);
+            if (population < maxPopulation)
+            {
+                population += (int)(10.0f * increaseSpeed * Time.deltaTime);
 
-            caveNumber.GetComponentInChildren<Text>().text = population.ToString();
-            caveNumber.transform.position = mCamera.WorldToScreenPoint(this.transform.position + new Vector3(0, 0.6f, 0));
+                caveNumber.GetComponentInChildren<Text>().text = population.ToString();
+                caveNumber.GetComponentInChildren<Text>().color = Color.cyan;
+                caveNumber.transform.position = mCamera.WorldToScreenPoint(this.transform.position + new Vector3(0, 0.6f, 0));
+            }
         }
+
+        // 충돌하면 3초후 Destroy
+        if (!isDestroy)
+        {
+            StartCoroutine("DestroyCharacter");
+        }
+
+    }
+
+    // 일정 시간 후 resource, dest UI clear 및 Destroy Character
+    IEnumerator DestroyCharacter()
+    {
+        isDestroy = true;
+        yield return new WaitForSeconds(3f);
+        //Debug.Log("3초후");
+
+        /////////2초 후 일어날 일 Destroy(person), Destroy(personTransform), Destroy(mNumberList)
+
+        isDestroy = false;
     }
 }

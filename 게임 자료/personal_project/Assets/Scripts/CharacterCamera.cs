@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CharacterCamera : MonoBehaviour
 {
-
+    [HideInInspector]
     public Transform CharacterTransform = null;
 
     [Range(0.01f, 1.0f)]
