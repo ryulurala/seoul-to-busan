@@ -8,26 +8,22 @@ public class ClickToMove : MonoBehaviour
     private Animator mAnimator;
 
     private NavMeshAgent mNavMeshAgent;
-    
-    private bool mRunning = false;
 
-    [SerializeField]
-    private GameObject destination;
+    public bool mRunning = true;
 
+    public GameObject destination;
     // Start is called before the first frame update
     void Start()
     {
         mAnimator = GetComponent<Animator>();
         mNavMeshAgent = GetComponent<NavMeshAgent>();
         destination = GameObject.Find("Person").GetComponent<PersonManager>().destMap;
+        mNavMeshAgent.SetDestination(destination.transform.position);
     }
 
     // Update is called once per frame
     void Update()
     {
-        mNavMeshAgent.SetDestination(destination.transform.position);
-       
-
         if(mNavMeshAgent.remainingDistance <= mNavMeshAgent.stoppingDistance)
         {
             mRunning = false;
@@ -39,4 +35,5 @@ public class ClickToMove : MonoBehaviour
 
         mAnimator.SetBool("running", mRunning);
     }
+
 }

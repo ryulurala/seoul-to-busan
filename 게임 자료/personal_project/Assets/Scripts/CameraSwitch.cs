@@ -12,18 +12,9 @@ public class CameraSwitch : MonoBehaviour
         Camera.main.GetComponent<CharacterCamera>().CharacterTransform = transform;
     }
 
-    public void UpClick()
-    {
-        Camera.main.GetComponent<CharacterCamera>().CharacterTransform = GameObject.Find("Person").GetComponent<PersonManager>().personTransform[--current];
-    }
-
-    public void MiddleClick()
+    public void PivotClick()
     {
         Camera.main.GetComponent<CharacterCamera>().CharacterTransform = transform;
     }
 
-    public void DownClick()
-    {
-        Camera.main.GetComponent<CharacterCamera>().CharacterTransform = GameObject.Find("Person").GetComponent<PersonManager>().personTransform[++current];
-    }
 }

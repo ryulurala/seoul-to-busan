@@ -27,6 +27,7 @@ public class PersonManager : MonoBehaviour
 
     private int check = -1;
     private bool isStart = false;
+    private bool isDestroy = false;
 
     // 생길 때도 한꺼번에, 지울 때도 한꺼번에
     public List<GameObject> persons = new List<GameObject>(); // person
@@ -68,8 +69,55 @@ public class PersonManager : MonoBehaviour
         {
             mNumberList[i].transform.position = mCamera.WorldToScreenPoint(personTransform[i].position + new Vector3(0, 0.6f, 0));
         }
-        
 
+        // Coroutine 실행
+        if (!isDestroy)
+        {
+            // 3초후 Destroy
+            if (persons.Count > 0)
+            {
+                StartCoroutine("DestroyCharacter");
+            }
+        }
+
+    }
+
+    // 일정 시간 후 resource, dest UI clear 및 Destroy Character
+    IEnumerator DestroyCharacter()
+    {
+        isDestroy = true;
+        Debug.Log("startCoroutine");
+        for (int i = 0; i < persons.Count; i++)
+        {
+            if (!persons[i].GetComponent<ClickToMove>().mRunning)
+            {
+                yield return new WaitForSeconds(3f);
+                break;
+            }
+        }
+
+        /////////3초 후 일어날 일 Destroy(person), Destroy(personTransform), Destroy(mNumberList)
+        for (int i=0; i<persons.Count; i++)
+        {
+            if (!persons[i].GetComponent<ClickToMove>().mRunning)
+            {
+                GameObject destTemp = persons[i].GetComponent<ClickToMove>().destination;
+
+                Camera.main.GetComponent<CharacterCamera>().CharacterTransform = destTemp.transform; // 소멸된 Cave를 바라보게 함
+
+                destTemp.GetComponent<CaveDefault>().population += int.Parse(mNumberList[i].GetComponent<Text>().text); // 목적지에 인구 수 추가
+                
+                // Destroy
+                Destroy(mNumberList[i]);
+                Destroy(persons[i]);
+                Destroy(personTransform[i]);
+                persons.RemoveAt(i);
+                mNumberList.RemoveAt(i);
+                personTransform.RemoveAt(i);
+            }
+        }
+
+        isDestroy = false;
     }
 
     public void SeoulClick()
@@ -490,6 +538,5 @@ public class PersonManager : MonoBehaviour
             check = 0; // 출발지와 도착지가 둘다 선택됨
             isStart = false;
         }
-       
     }
 }

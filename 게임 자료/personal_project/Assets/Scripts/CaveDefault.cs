@@ -27,7 +27,6 @@ public class CaveDefault : MonoBehaviour
     private float increaseSpeed;
 
     public bool isDefault;
-    private bool isDestroy = false;
 
     Camera mCamera;
 
@@ -38,7 +37,6 @@ public class CaveDefault : MonoBehaviour
         mCamera = Camera.main;
         caveNumber = Instantiate(caveNumberPrefab, this.transform.position, Quaternion.identity, caveNumberList.transform);
         caveNumber.GetComponent<BarController>().maxNumber = maxPopulation;
-        personManager = GameObject.Find("Person");
     }
 
     // Update is called once per frame
@@ -72,23 +70,5 @@ public class CaveDefault : MonoBehaviour
             }
         }
 
-        // 충돌하면 3초후 Destroy
-        if (!isDestroy)
-        {
-            StartCoroutine("DestroyCharacter");
-        }
-
-    }
-
-    // 일정 시간 후 resource, dest UI clear 및 Destroy Character
-    IEnumerator DestroyCharacter()
-    {
-        isDestroy = true;
-        yield return new WaitForSeconds(3f);
-        //Debug.Log("3초후");
-
-        /////////2초 후 일어날 일 Destroy(person), Destroy(personTransform), Destroy(mNumberList)
-
-        isDestroy = false;
     }
 }
