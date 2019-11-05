@@ -27,6 +27,7 @@ public class CaveDefault : MonoBehaviour
     private float increaseSpeed;
 
     public bool isDefault;
+    private bool isPlus = false;
 
     Camera mCamera;
 
@@ -62,6 +63,7 @@ public class CaveDefault : MonoBehaviour
         {
             if (population < maxPopulation)
             {
+                // 이거 코루틴으로 증가
                 population += (int)(10.0f * increaseSpeed * Time.deltaTime);
 
                 caveNumber.GetComponentInChildren<Text>().text = population.ToString();
@@ -69,6 +71,16 @@ public class CaveDefault : MonoBehaviour
                 caveNumber.transform.position = mCamera.WorldToScreenPoint(this.transform.position + new Vector3(0, 0.6f, 0));
             }
         }
-
     }
+
+    /*
+    // 1초당 증가율
+    IEnumerator IncreasePer1Second()
+    {
+        isPlus = true;
+        yield return new WaitForSeconds(1f);
+        population += (int)increaseSpeed;
+
+        isPlus = false;
+    }*/
 }

@@ -28,11 +28,16 @@ public class PersonManager : MonoBehaviour
     private int check = -1;
     private bool isStart = false;
     private bool isDestroy = false;
+    private bool isClear = false;
 
     // 생길 때도 한꺼번에, 지울 때도 한꺼번에
     public List<GameObject> persons = new List<GameObject>(); // person
+    public List<string> rMap = new List<string>();
+    public List<string> dMap = new List<string>();
+
     public List<GameObject> mNumberList = new List<GameObject>(); // bar
     public List<Transform> personTransform = new List<Transform>(); // persons의 transform
+
 
     void Start()
     {
@@ -45,6 +50,9 @@ public class PersonManager : MonoBehaviour
         //둘다 선택 되었을 때
         if (check == 0) // 0
         {
+            rMap.Add(startingPoint.text);
+            dMap.Add(destination.text);
+
             persons.Add(Instantiate(Character, resourceMap.transform.position, Quaternion.identity, transform));
             check = -1;
 
@@ -58,11 +66,16 @@ public class PersonManager : MonoBehaviour
             bar.GetComponent<Text>().text = cavePopulDivide.ToString();
             resourceMap.GetComponent<CaveDefault>().population -= cavePopulDivide; // resourceMap에 차감
 
-
             mNumberList.Add(bar); // bar 추가
-            
+
             // 초기화
             resourceMap = null;
+
+            // Text 초기화
+            if (!isClear)
+            {
+                StartCoroutine("ClearText");
+            }
         }
 
         for (int i = 0; i < personTransform.Count; i++)
@@ -70,7 +83,8 @@ public class PersonManager : MonoBehaviour
             mNumberList[i].transform.position = mCamera.WorldToScreenPoint(personTransform[i].position + new Vector3(0, 0.6f, 0));
         }
 
-        // Coroutine 실행
+        
+        // Destroy Coroutine 실행
         if (!isDestroy)
         {
             // 3초후 Destroy
@@ -82,11 +96,26 @@ public class PersonManager : MonoBehaviour
 
     }
 
+    // 중앙상단에 Text 초기화
+    IEnumerator ClearText()
+    {
+        isClear = true;
+        
+        yield return new WaitForSeconds(2f);
+        if (resourceMap == null)
+        {
+            startingPoint.text = null;
+            middle.text = null;
+            destination.text = null;
+        }
+        isClear = false;
+    }
+
     // 일정 시간 후 resource, dest UI clear 및 Destroy Character
     IEnumerator DestroyCharacter()
     {
         isDestroy = true;
-        Debug.Log("startCoroutine");
+        Debug.Log("DestroyCharacter Coroutine");
         for (int i = 0; i < persons.Count; i++)
         {
             if (!persons[i].GetComponent<ClickToMove>().mRunning)
@@ -114,6 +143,10 @@ public class PersonManager : MonoBehaviour
                 persons.RemoveAt(i);
                 mNumberList.RemoveAt(i);
                 personTransform.RemoveAt(i);
+
+                // Map name destroy
+                rMap.RemoveAt(i);
+                dMap.RemoveAt(i);
             }
         }
 

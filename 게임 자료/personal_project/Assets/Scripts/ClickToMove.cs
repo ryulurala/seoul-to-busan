@@ -17,7 +17,7 @@ public class ClickToMove : MonoBehaviour
     {
         mAnimator = GetComponent<Animator>();
         mNavMeshAgent = GetComponent<NavMeshAgent>();
-        destination = GameObject.Find("Person").GetComponent<PersonManager>().destMap;
+        destination = GameObject.FindGameObjectWithTag("PersonControl").GetComponent<PersonManager>().destMap;
         mNavMeshAgent.SetDestination(destination.transform.position);
     }
 

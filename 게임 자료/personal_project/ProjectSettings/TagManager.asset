@@ -7,6 +7,7 @@ TagManager:
   - Object
   - Minimap
   - Map
+  - PersonControl
   layers:
   - Default
   - TransparentFX
