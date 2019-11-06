@@ -22,7 +22,7 @@ public class CaveDefault : MonoBehaviour
 
     public int population;
 
-    [Range(1.0f, 8.0f)]
+    [Range(4.0f, 8.0f)]
     [SerializeField]
     private float increaseSpeed;
 
@@ -63,7 +63,6 @@ public class CaveDefault : MonoBehaviour
         {
             if (population < maxPopulation)
             {
-                // 이거 코루틴으로 증가
                 population += (int)(10.0f * increaseSpeed * Time.deltaTime);
 
                 caveNumber.GetComponentInChildren<Text>().text = population.ToString();
@@ -72,15 +71,4 @@ public class CaveDefault : MonoBehaviour
             }
         }
     }
-
-    /*
-    // 1초당 증가율
-    IEnumerator IncreasePer1Second()
-    {
-        isPlus = true;
-        yield return new WaitForSeconds(1f);
-        population += (int)increaseSpeed;
-
-        isPlus = false;
-    }*/
 }

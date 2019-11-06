@@ -25,7 +25,7 @@ public class PersonManager : MonoBehaviour
 
     Camera mCamera;
 
-    private int check = -1;
+    public int check = -1;
     private bool isStart = false;
     private bool isDestroy = false;
     private bool isClear = false;
@@ -38,10 +38,12 @@ public class PersonManager : MonoBehaviour
     public List<GameObject> mNumberList = new List<GameObject>(); // bar
     public List<Transform> personTransform = new List<Transform>(); // persons의 transform
 
+    private GameObject pivot;
 
     void Start()
     {
         mCamera = Camera.main;
+        pivot = GameObject.FindGameObjectWithTag("Pivot");
     }
 
     // Update is called once per frame
@@ -52,6 +54,13 @@ public class PersonManager : MonoBehaviour
         {
             rMap.Add(startingPoint.text);
             dMap.Add(destination.text);
+
+            for(int i=1; i<5; i++)
+            {
+                pivot.GetComponent<CameraSwitch>().buttons[i].GetComponent<Animator>().SetBool("ClickBling", false);
+            }
+
+            pivot.GetComponent<CameraSwitch>().buttons[0].GetComponent<Animator>().SetBool("ClickBling", true);
 
             persons.Add(Instantiate(Character, resourceMap.transform.position, Quaternion.identity, transform));
             check = -1;

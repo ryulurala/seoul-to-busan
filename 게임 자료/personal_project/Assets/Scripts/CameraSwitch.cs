@@ -6,10 +6,11 @@ using UnityEngine.UI;
 public class CameraSwitch : MonoBehaviour
 {
     private GameObject pManager;
+
     private bool isUpdate = false;
 
     [SerializeField]
-    List<Button> buttons = new List<Button>();
+    public List<Button> buttons = new List<Button>();
 
     // Start is called before the first frame update
     void Start()
@@ -29,7 +30,7 @@ public class CameraSwitch : MonoBehaviour
             }
             else
             {
-                buttons[0].GetComponentInChildren<Text>().text = null;
+                buttons[0].GetComponent<Text>().text = null;
             }
         }
     }
@@ -47,7 +48,7 @@ public class CameraSwitch : MonoBehaviour
             {
                 for(i=0; i<pCnt; i++)
                 {
-                    buttons[i].GetComponentInChildren<Text>().text = pManager.GetComponent<PersonManager>().rMap[pCnt-i-1] + "\n"
+                    buttons[i].GetComponent<Text>().text = pManager.GetComponent<PersonManager>().rMap[pCnt-i-1] + "\n"
                         + pManager.GetComponent<PersonManager>().dMap[pCnt - i - 1] + "\n(" + pManager.GetComponent<PersonManager>().mNumberList[pCnt - i - 1].GetComponent<Text>().text+")";
                 }
                 for(int j=i; j<5; j++)
@@ -59,7 +60,7 @@ public class CameraSwitch : MonoBehaviour
             {
                 for(i=0; i<5; i++)
                 {
-                    buttons[i].GetComponentInChildren<Text>().text = pManager.GetComponent<PersonManager>().rMap[pCnt - i - 1] + "\n"
+                    buttons[i].GetComponent<Text>().text = pManager.GetComponent<PersonManager>().rMap[pCnt - i - 1] + "\n"
                          + pManager.GetComponent<PersonManager>().dMap[pCnt - i - 1] + "\n(" + pManager.GetComponent<PersonManager>().mNumberList[pCnt - i - 1].GetComponent<Text>().text + ")";
                 }
             }
@@ -71,7 +72,10 @@ public class CameraSwitch : MonoBehaviour
     public void PivotClick()
     {
         Camera.main.GetComponent<CharacterCamera>().CharacterTransform = transform;
-        Debug.Log("ListClick");
+        for (int i = 0; i < 5; i++)
+        {
+            buttons[i].GetComponent<Animator>().SetBool("ClickBling", false);
+        }
     }
 
     public void P1Click()
@@ -79,39 +83,66 @@ public class CameraSwitch : MonoBehaviour
         if (pManager.GetComponent<PersonManager>().personTransform.Count > 0)
         {
             Camera.main.GetComponent<CharacterCamera>().CharacterTransform = pManager.GetComponent<PersonManager>().personTransform[pManager.GetComponent<PersonManager>().personTransform.Count-1];
+
+            for (int i = 0; i < 5; i++)
+            {
+                buttons[i].GetComponent<Animator>().SetBool("ClickBling", false);
+            }
+            buttons[0].GetComponent<Animator>().SetBool("ClickBling", true);
         }
-        Debug.Log("P1Click");
     }
     public void P2Click()
     {
         if (pManager.GetComponent<PersonManager>().personTransform.Count > 1)
         {
             Camera.main.GetComponent<CharacterCamera>().CharacterTransform = pManager.GetComponent<PersonManager>().personTransform[pManager.GetComponent<PersonManager>().personTransform.Count - 2];
+
+            for (int i = 0; i < 5; i++)
+            {
+                buttons[i].GetComponent<Animator>().SetBool("ClickBling", false);
+            }
+            buttons[1].GetComponent<Animator>().SetBool("ClickBling", true);
         }
-        Debug.Log("P2Click");
     }
     public void P3Click()
     {
         if (pManager.GetComponent<PersonManager>().personTransform.Count > 2)
         {
             Camera.main.GetComponent<CharacterCamera>().CharacterTransform = pManager.GetComponent<PersonManager>().personTransform[pManager.GetComponent<PersonManager>().personTransform.Count - 3];
+
+            for (int i = 0; i < 5; i++)
+            {
+                buttons[i].GetComponent<Animator>().SetBool("ClickBling", false);
+            }
+
+            buttons[2].GetComponent<Animator>().SetBool("ClickBling", true);
         }
-        Debug.Log("P3Click");
     }
     public void P4Click()
     {
         if (pManager.GetComponent<PersonManager>().personTransform.Count > 3)
         {
             Camera.main.GetComponent<CharacterCamera>().CharacterTransform = pManager.GetComponent<PersonManager>().personTransform[pManager.GetComponent<PersonManager>().personTransform.Count - 4];
+
+            for (int i = 0; i < 5; i++)
+            {
+                buttons[i].GetComponent<Animator>().SetBool("ClickBling", false);
+            }
+            buttons[3].GetComponent<Animator>().SetBool("ClickBling", true);
+
         }
-        Debug.Log("P4Click");
     }
     public void P5Click()
     {
         if (pManager.GetComponent<PersonManager>().personTransform.Count > 4)
         {
             Camera.main.GetComponent<CharacterCamera>().CharacterTransform = pManager.GetComponent<PersonManager>().personTransform[pManager.GetComponent<PersonManager>().personTransform.Count - 5];
+
+            for (int i = 0; i < 5; i++)
+            {
+                buttons[i].GetComponent<Animator>().SetBool("ClickBling", false);
+            }
+            buttons[4].GetComponent<Animator>().SetBool("ClickBling", true);
         }
-        Debug.Log("P5Click");
     }
 }
