@@ -27,6 +27,10 @@ public class CameraSwitch : MonoBehaviour
             {
                 StartCoroutine("UpdatePersonList");
             }
+            else
+            {
+                buttons[0].GetComponentInChildren<Text>().text = null;
+            }
         }
     }
 
@@ -43,8 +47,8 @@ public class CameraSwitch : MonoBehaviour
             {
                 for(i=0; i<pCnt; i++)
                 {
-                    buttons[i].GetComponentInChildren<Text>().text = pManager.GetComponent<PersonManager>().rMap[i] + "\n"
-                        + pManager.GetComponent<PersonManager>().dMap[i] + "\n(" + pManager.GetComponent<PersonManager>().mNumberList[i].GetComponent<Text>().text+")";
+                    buttons[i].GetComponentInChildren<Text>().text = pManager.GetComponent<PersonManager>().rMap[pCnt-i-1] + "\n"
+                        + pManager.GetComponent<PersonManager>().dMap[pCnt - i - 1] + "\n(" + pManager.GetComponent<PersonManager>().mNumberList[pCnt - i - 1].GetComponent<Text>().text+")";
                 }
                 for(int j=i; j<5; j++)
                 {
@@ -55,16 +59,9 @@ public class CameraSwitch : MonoBehaviour
             {
                 for(i=0; i<5; i++)
                 {
-                    buttons[i].GetComponentInChildren<Text>().text = pManager.GetComponent<PersonManager>().rMap[i] + "\n"
-                         + pManager.GetComponent<PersonManager>().dMap[i] + "\n(" + pManager.GetComponent<PersonManager>().mNumberList[i].GetComponent<Text>().text + ")";
+                    buttons[i].GetComponentInChildren<Text>().text = pManager.GetComponent<PersonManager>().rMap[pCnt - i - 1] + "\n"
+                         + pManager.GetComponent<PersonManager>().dMap[pCnt - i - 1] + "\n(" + pManager.GetComponent<PersonManager>().mNumberList[pCnt - i - 1].GetComponent<Text>().text + ")";
                 }
-            }
-        }
-        else
-        {
-            for(int i=0; i<5; i++)
-            {
-                buttons[i].GetComponentInChildren<Text>().text = null;
             }
         }
 
@@ -81,7 +78,7 @@ public class CameraSwitch : MonoBehaviour
     {
         if (pManager.GetComponent<PersonManager>().personTransform.Count > 0)
         {
-            Camera.main.GetComponent<CharacterCamera>().CharacterTransform = pManager.GetComponent<PersonManager>().personTransform[0];
+            Camera.main.GetComponent<CharacterCamera>().CharacterTransform = pManager.GetComponent<PersonManager>().personTransform[pManager.GetComponent<PersonManager>().personTransform.Count-1];
         }
         Debug.Log("P1Click");
     }
@@ -89,7 +86,7 @@ public class CameraSwitch : MonoBehaviour
     {
         if (pManager.GetComponent<PersonManager>().personTransform.Count > 1)
         {
-            Camera.main.GetComponent<CharacterCamera>().CharacterTransform = pManager.GetComponent<PersonManager>().personTransform[1];
+            Camera.main.GetComponent<CharacterCamera>().CharacterTransform = pManager.GetComponent<PersonManager>().personTransform[pManager.GetComponent<PersonManager>().personTransform.Count - 2];
         }
         Debug.Log("P2Click");
     }
@@ -97,7 +94,7 @@ public class CameraSwitch : MonoBehaviour
     {
         if (pManager.GetComponent<PersonManager>().personTransform.Count > 2)
         {
-            Camera.main.GetComponent<CharacterCamera>().CharacterTransform = pManager.GetComponent<PersonManager>().personTransform[2];
+            Camera.main.GetComponent<CharacterCamera>().CharacterTransform = pManager.GetComponent<PersonManager>().personTransform[pManager.GetComponent<PersonManager>().personTransform.Count - 3];
         }
         Debug.Log("P3Click");
     }
@@ -105,7 +102,7 @@ public class CameraSwitch : MonoBehaviour
     {
         if (pManager.GetComponent<PersonManager>().personTransform.Count > 3)
         {
-            Camera.main.GetComponent<CharacterCamera>().CharacterTransform = pManager.GetComponent<PersonManager>().personTransform[3];
+            Camera.main.GetComponent<CharacterCamera>().CharacterTransform = pManager.GetComponent<PersonManager>().personTransform[pManager.GetComponent<PersonManager>().personTransform.Count - 4];
         }
         Debug.Log("P4Click");
     }
@@ -113,7 +110,7 @@ public class CameraSwitch : MonoBehaviour
     {
         if (pManager.GetComponent<PersonManager>().personTransform.Count > 4)
         {
-            Camera.main.GetComponent<CharacterCamera>().CharacterTransform = pManager.GetComponent<PersonManager>().personTransform[4];
+            Camera.main.GetComponent<CharacterCamera>().CharacterTransform = pManager.GetComponent<PersonManager>().personTransform[pManager.GetComponent<PersonManager>().personTransform.Count - 5];
         }
         Debug.Log("P5Click");
     }

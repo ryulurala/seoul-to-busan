@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.4338536, g: 0.39687273, b: 0.4806046, a: 1}
+  m_IndirectSpecularColor: {r: 0.4338546, g: 0.3968735, b: 0.48060542, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2634,7 +2634,7 @@ GameObject:
   - component: {fileID: 558607441}
   m_Layer: 0
   m_Name: Camera Pivot
-  m_TagString: Untagged
+  m_TagString: Pivot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
