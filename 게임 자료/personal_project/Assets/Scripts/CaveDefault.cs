@@ -12,6 +12,9 @@ public class CaveDefault : MonoBehaviour
     GameObject caveNumberPrefab = null;
     GameObject caveNumber;
 
+    [SerializeField]
+    GameObject bonfire;
+
     private GameObject personManager;
 
     [SerializeField]
@@ -27,7 +30,7 @@ public class CaveDefault : MonoBehaviour
     private float increaseSpeed;
 
     public bool isDefault;
-    private bool isPlus = false;
+    private bool isFire = false;
 
     Camera mCamera;
 
@@ -43,31 +46,47 @@ public class CaveDefault : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // Default일 때
         if (isDefault)
         {
             
             if (population > defaultPopulation)
             {
                 population -= defaultPopulation;
+                defaultPopulation = 0;
                 isDefault = false;
             }
             else
             {
                 defaultPopulation -= population;
+                population = 0;
             }
             caveNumber.GetComponentInChildren<Text>().text = defaultPopulation.ToString();
             caveNumber.GetComponentInChildren<Text>().color = Color.white;
+            caveNumber.GetComponents<Image>()[0].enabled = false;
+            caveNumber.GetComponentsInChildren<Image>()[1].enabled = false;
+            
             caveNumber.transform.position = mCamera.WorldToScreenPoint(this.transform.position + new Vector3(0, 0.6f, 0));
         }
+
+        // Default 아닐 때
         else if (!isDefault)
         {
             if (population < maxPopulation)
             {
                 population += (int)(10.0f * increaseSpeed * Time.deltaTime);
 
+                caveNumber.GetComponents<Image>()[0].enabled = true;
+                caveNumber.GetComponentsInChildren<Image>()[1].enabled = true;
                 caveNumber.GetComponentInChildren<Text>().text = population.ToString();
                 caveNumber.GetComponentInChildren<Text>().color = Color.cyan;
                 caveNumber.transform.position = mCamera.WorldToScreenPoint(this.transform.position + new Vector3(0, 0.6f, 0));
+
+                if (!isFire)
+                {
+                    bonfire.SetActive(true);
+                    isFire = true;
+                }
             }
         }
     }

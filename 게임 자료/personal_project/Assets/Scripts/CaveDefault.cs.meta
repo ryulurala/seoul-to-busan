@@ -3,7 +3,10 @@ guid: 385f5106967546f4d97324ac69958848
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - caveNumberList: {instanceID: 0}
+  - caveNumberPrefab: {fileID: 6284823958985013416, guid: a5c98f22437f9aa49b475295f2d4f630,
+      type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

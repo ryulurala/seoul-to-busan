@@ -220,7 +220,7 @@ public class PersonManager : MonoBehaviour
             resourceMap = GameObject.Find("G_C");
             if (resourceMap.GetComponent<CaveDefault>().population > 0)
             {
-                startingPoint.text = "경기도";
+                startingPoint.text = "경기";
                 middle.text = "->";
                 check = 3;
                 isStart = true;
@@ -229,7 +229,7 @@ public class PersonManager : MonoBehaviour
         else if (isStart && check != 3)
         {
             destMap = GameObject.Find("G_C");
-            destination.text = "경기도";
+            destination.text = "경기";
             check = 0; // 출발지와 도착지가 둘다 선택됨
             isStart = false;
         }
@@ -245,7 +245,7 @@ public class PersonManager : MonoBehaviour
             resourceMap = GameObject.Find("GA_C");
             if (resourceMap.GetComponent<CaveDefault>().population > 0)
             {
-                startingPoint.text = "강원도";
+                startingPoint.text = "강원";
                 middle.text = "->";
                 check = 4;
                 isStart = true;
@@ -254,7 +254,7 @@ public class PersonManager : MonoBehaviour
         else if (isStart && check != 4)
         {
             destMap = GameObject.Find("GA_C");
-            destination.text = "강원도";
+            destination.text = "강원";
             check = 0; // 출발지와 도착지가 둘다 선택됨
             isStart = false;
         }
@@ -269,7 +269,7 @@ public class PersonManager : MonoBehaviour
             resourceMap = GameObject.Find("CHB_C");
             if (resourceMap.GetComponent<CaveDefault>().population > 0)
             {
-                startingPoint.text = "충청북도";
+                startingPoint.text = "충북";
                 middle.text = "->";
                 check = 5;
                 isStart = true;
@@ -278,7 +278,7 @@ public class PersonManager : MonoBehaviour
         else if (isStart && check != 5)
         {
             destMap = GameObject.Find("CHB_C");
-            destination.text = "충청북도";
+            destination.text = "충북";
             check = 0; // 출발지와 도착지가 둘다 선택됨
             isStart = false;
         }
@@ -294,7 +294,7 @@ public class PersonManager : MonoBehaviour
             resourceMap = GameObject.Find("CHN_C");
             if (resourceMap.GetComponent<CaveDefault>().population > 0)
             {
-                startingPoint.text = "충청남도";
+                startingPoint.text = "충남";
                 middle.text = "->";
                 check = 6;
                 isStart = true;
@@ -303,7 +303,7 @@ public class PersonManager : MonoBehaviour
         else if (isStart && check != 6)
         {
             destMap = GameObject.Find("CHN_C");
-            destination.text = "충청남도";
+            destination.text = "충남";
             check = 0; // 출발지와 도착지가 둘다 선택됨
             isStart = false;
         }
@@ -344,7 +344,7 @@ public class PersonManager : MonoBehaviour
             resourceMap = GameObject.Find("GB_C");
             if (resourceMap.GetComponent<CaveDefault>().population > 0)
             {
-                startingPoint.text = "경상북도";
+                startingPoint.text = "경북";
                 middle.text = "->";
                 check = 8;
                 isStart = true;
@@ -353,7 +353,7 @@ public class PersonManager : MonoBehaviour
         else if (isStart && check != 8)
         {
             destMap = GameObject.Find("GB_C");
-            destination.text = "경상북도";
+            destination.text = "경북";
             check = 0; // 출발지와 도착지가 둘다 선택됨
             isStart = false;
         }
@@ -369,7 +369,7 @@ public class PersonManager : MonoBehaviour
             resourceMap = GameObject.Find("GN_C");
             if (resourceMap.GetComponent<CaveDefault>().population > 0)
             {
-                startingPoint.text = "경상남도";
+                startingPoint.text = "경남";
                 middle.text = "->";
                 check = 9;
                 isStart = true;
@@ -378,7 +378,7 @@ public class PersonManager : MonoBehaviour
         else if (isStart && check != 9)
         {
             destMap = GameObject.Find("GN_C");
-            destination.text = "경상남도";
+            destination.text = "경남";
             check = 0; // 출발지와 도착지가 둘다 선택됨
             isStart = false;
         }
@@ -469,7 +469,7 @@ public class PersonManager : MonoBehaviour
             resourceMap = GameObject.Find("JB_C");
             if (resourceMap.GetComponent<CaveDefault>().population > 0)
             {
-                startingPoint.text = "전라북도";
+                startingPoint.text = "전북";
                 middle.text = "->";
                 check = 13;
                 isStart = true;
@@ -478,7 +478,7 @@ public class PersonManager : MonoBehaviour
         else if (isStart && check != 13)
         {
             destMap = GameObject.Find("JB_C");
-            destination.text = "전라북도";
+            destination.text = "전북";
             check = 0; // 출발지와 도착지가 둘다 선택됨
             isStart = false;
         }
@@ -493,7 +493,7 @@ public class PersonManager : MonoBehaviour
             resourceMap = GameObject.Find("JN_C");
             if (resourceMap.GetComponent<CaveDefault>().population > 0)
             {
-                startingPoint.text = "전라남도";
+                startingPoint.text = "전남";
                 middle.text = "->";
                 check = 14;
                 isStart = true;
@@ -502,7 +502,7 @@ public class PersonManager : MonoBehaviour
         else if (isStart && check != 14)
         {
             destMap = GameObject.Find("JN_C");
-            destination.text = "전라남도";
+            destination.text = "전남";
             check = 0; // 출발지와 도착지가 둘다 선택됨
             isStart = false;
         }
@@ -542,7 +542,7 @@ public class PersonManager : MonoBehaviour
             resourceMap = GameObject.Find("JE_C");
             if (resourceMap.GetComponent<CaveDefault>().population > 0)
             {
-                startingPoint.text = "제주도";
+                startingPoint.text = "제주";
                 middle.text = "->";
                 check = 16;
                 isStart = true;
@@ -551,7 +551,7 @@ public class PersonManager : MonoBehaviour
         else if (isStart && check != 16)
         {
             destMap = GameObject.Find("JE_C");
-            destination.text = "제주도";
+            destination.text = "제주";
             check = 0; // 출발지와 도착지가 둘다 선택됨
             isStart = false;
         }

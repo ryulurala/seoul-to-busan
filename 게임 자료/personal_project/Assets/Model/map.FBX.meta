@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 96025e3131660674b8a7007cf1916116
+guid: 3e8da6b7f67241741915777e0de71c75
 ModelImporter:
   serializedVersion: 26
   internalIDToNameTable: []
@@ -7,28 +7,8 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Cave
-    second: {fileID: 2100000, guid: 6f43125d079fb4648a7090340ca27b1e, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Leaves
-    second: {fileID: 2100000, guid: 4c5c1ff062700084a848c10e7dfb39f3, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
       name: Map
     second: {fileID: 2100000, guid: b76e303518e55704eb4f26accf198e74, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Stone
-    second: {fileID: 2100000, guid: 477e954866b0c5d409799512c034106d, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Wood
-    second: {fileID: 2100000, guid: 6017ac5ae1b78ec419f739ddb45067c5, type: 2}
   materials:
     importMaterials: 1
     materialName: 0

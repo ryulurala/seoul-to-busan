@@ -9,6 +9,8 @@ TagManager:
   - Map
   - PersonControl
   - Pivot
+  - Fire
+  - Cave
   layers:
   - Default
   - TransparentFX
