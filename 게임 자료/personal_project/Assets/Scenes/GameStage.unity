@@ -724,10 +724,10 @@ MonoBehaviour:
   caveNumberPrefab: {fileID: 6284823958985013416, guid: a5c98f22437f9aa49b475295f2d4f630,
     type: 3}
   bonfire: {fileID: 1143331289}
-  defaultPopulation: 2000
-  maxPopulation: 6000
+  defaultPopulation: 336
+  maxPopulation: 1550
   population: 0
-  increaseSpeed: 6
+  increaseSpeed: 5
   isDefault: 0
 --- !u!4 &193996883 stripped
 Transform:
@@ -1463,10 +1463,10 @@ MonoBehaviour:
   caveNumberPrefab: {fileID: 6284823958985013416, guid: a5c98f22437f9aa49b475295f2d4f630,
     type: 3}
   bonfire: {fileID: 1299507219}
-  defaultPopulation: 2000
-  maxPopulation: 6000
+  defaultPopulation: 35
+  maxPopulation: 200
   population: 0
-  increaseSpeed: 6
+  increaseSpeed: 4
   isDefault: 0
 --- !u!1 &416660988 stripped
 GameObject:
@@ -1490,10 +1490,10 @@ MonoBehaviour:
   caveNumberPrefab: {fileID: 6284823958985013416, guid: a5c98f22437f9aa49b475295f2d4f630,
     type: 3}
   bonfire: {fileID: 1857881670}
-  defaultPopulation: 2000
-  maxPopulation: 6000
+  defaultPopulation: 10
+  maxPopulation: 80
   population: 0
-  increaseSpeed: 6
+  increaseSpeed: 4
   isDefault: 0
 --- !u!1001 &455129051
 PrefabInstance:
@@ -1852,10 +1852,10 @@ MonoBehaviour:
   caveNumberPrefab: {fileID: 6284823958985013416, guid: a5c98f22437f9aa49b475295f2d4f630,
     type: 3}
   bonfire: {fileID: 782350665}
-  defaultPopulation: 2000
-  maxPopulation: 6000
+  defaultPopulation: 350
+  maxPopulation: 1600
   population: 0
-  increaseSpeed: 6
+  increaseSpeed: 5.2
   isDefault: 0
 --- !u!1 &558607439
 GameObject:
@@ -1928,10 +1928,10 @@ MonoBehaviour:
   caveNumberPrefab: {fileID: 6284823958985013416, guid: a5c98f22437f9aa49b475295f2d4f630,
     type: 3}
   bonfire: {fileID: 1803091399}
-  defaultPopulation: 2000
-  maxPopulation: 6000
+  defaultPopulation: 115
+  maxPopulation: 575
   population: 0
-  increaseSpeed: 6
+  increaseSpeed: 4.4
   isDefault: 0
 --- !u!1 &581405889
 GameObject:
@@ -2313,8 +2313,8 @@ MonoBehaviour:
   caveNumberPrefab: {fileID: 6284823958985013416, guid: a5c98f22437f9aa49b475295f2d4f630,
     type: 3}
   bonfire: {fileID: 1266483121}
-  defaultPopulation: 2000
-  maxPopulation: 6000
+  defaultPopulation: 350
+  maxPopulation: 1750
   population: 0
   increaseSpeed: 6
   isDefault: 0
@@ -2340,10 +2340,10 @@ MonoBehaviour:
   caveNumberPrefab: {fileID: 6284823958985013416, guid: a5c98f22437f9aa49b475295f2d4f630,
     type: 3}
   bonfire: {fileID: 1941658178}
-  defaultPopulation: 2000
-  maxPopulation: 6000
+  defaultPopulation: 212
+  maxPopulation: 1000
   population: 0
-  increaseSpeed: 6
+  increaseSpeed: 4
   isDefault: 0
 --- !u!1001 &782350664
 PrefabInstance:
@@ -4132,9 +4132,9 @@ MonoBehaviour:
   caveNumberPrefab: {fileID: 6284823958985013416, guid: a5c98f22437f9aa49b475295f2d4f630,
     type: 3}
   bonfire: {fileID: 821209499}
-  defaultPopulation: 2000
-  maxPopulation: 6000
-  population: 3000
+  defaultPopulation: 1320
+  maxPopulation: 5000
+  population: 0
   increaseSpeed: 6
   isDefault: 0
 --- !u!1 &1100401864 stripped
@@ -4159,10 +4159,10 @@ MonoBehaviour:
   caveNumberPrefab: {fileID: 6284823958985013416, guid: a5c98f22437f9aa49b475295f2d4f630,
     type: 3}
   bonfire: {fileID: 1166352525}
-  defaultPopulation: 2000
-  maxPopulation: 6000
+  defaultPopulation: 114
+  maxPopulation: 640
   population: 0
-  increaseSpeed: 6
+  increaseSpeed: 5
   isDefault: 0
 --- !u!1 &1112582993
 GameObject:
@@ -4827,10 +4827,10 @@ MonoBehaviour:
   caveNumberPrefab: {fileID: 6284823958985013416, guid: a5c98f22437f9aa49b475295f2d4f630,
     type: 3}
   bonfire: {fileID: 2097653151}
-  defaultPopulation: 2000
-  maxPopulation: 6000
+  defaultPopulation: 295
+  maxPopulation: 1200
   population: 0
-  increaseSpeed: 6
+  increaseSpeed: 5
   isDefault: 0
 --- !u!1 &1217563439
 GameObject:
@@ -5120,10 +5120,10 @@ MonoBehaviour:
   caveNumberPrefab: {fileID: 6284823958985013416, guid: a5c98f22437f9aa49b475295f2d4f630,
     type: 3}
   bonfire: {fileID: 1637263847}
-  defaultPopulation: 2000
-  maxPopulation: 6000
+  defaultPopulation: 975
+  maxPopulation: 4700
   population: 0
-  increaseSpeed: 6
+  increaseSpeed: 7
   isDefault: 0
 --- !u!1001 &1266483120
 PrefabInstance:
@@ -5305,10 +5305,10 @@ MonoBehaviour:
   caveNumberPrefab: {fileID: 6284823958985013416, guid: a5c98f22437f9aa49b475295f2d4f630,
     type: 3}
   bonfire: {fileID: 1615219194}
-  defaultPopulation: 2000
-  maxPopulation: 6000
+  defaultPopulation: 145
+  maxPopulation: 700
   population: 0
-  increaseSpeed: 6
+  increaseSpeed: 4.3
   isDefault: 0
 --- !u!1001 &1339534539
 PrefabInstance:
@@ -6744,10 +6744,10 @@ MonoBehaviour:
   caveNumberPrefab: {fileID: 6284823958985013416, guid: a5c98f22437f9aa49b475295f2d4f630,
     type: 3}
   bonfire: {fileID: 212783450}
-  defaultPopulation: 2000
-  maxPopulation: 6000
+  defaultPopulation: 185
+  maxPopulation: 800
   population: 0
-  increaseSpeed: 6
+  increaseSpeed: 4.5
   isDefault: 0
 --- !u!1 &1554599507
 GameObject:
@@ -6910,10 +6910,10 @@ MonoBehaviour:
   caveNumberPrefab: {fileID: 6284823958985013416, guid: a5c98f22437f9aa49b475295f2d4f630,
     type: 3}
   bonfire: {fileID: 278287030}
-  defaultPopulation: 2000
-  maxPopulation: 6000
+  defaultPopulation: 154
+  maxPopulation: 770
   population: 0
-  increaseSpeed: 6
+  increaseSpeed: 4.5
   isDefault: 0
 --- !u!1 &1620272887 stripped
 GameObject:
@@ -6937,10 +6937,10 @@ MonoBehaviour:
   caveNumberPrefab: {fileID: 6284823958985013416, guid: a5c98f22437f9aa49b475295f2d4f630,
     type: 3}
   bonfire: {fileID: 455129052}
-  defaultPopulation: 2000
-  maxPopulation: 6000
+  defaultPopulation: 80
+  maxPopulation: 400
   population: 0
-  increaseSpeed: 6
+  increaseSpeed: 4
   isDefault: 0
 --- !u!1001 &1637263845
 PrefabInstance:
@@ -7201,10 +7201,10 @@ MonoBehaviour:
   caveNumberPrefab: {fileID: 6284823958985013416, guid: a5c98f22437f9aa49b475295f2d4f630,
     type: 3}
   bonfire: {fileID: 1339534540}
-  defaultPopulation: 2000
-  maxPopulation: 6000
+  defaultPopulation: 200
+  maxPopulation: 1000
   population: 0
-  increaseSpeed: 6
+  increaseSpeed: 5
   isDefault: 0
 --- !u!1 &1682431824
 GameObject:
@@ -8789,90 +8789,180 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 200e2892f989c434cad16124921d1f59,
+        type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: -3583885475046964438, guid: 200e2892f989c434cad16124921d1f59,
         type: 3}
       propertyPath: m_StaticEditorFlags
       value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: -3583885475046964438, guid: 200e2892f989c434cad16124921d1f59,
+        type: 3}
+      propertyPath: m_TagString
+      value: Cave
       objectReference: {fileID: 0}
     - target: {fileID: -3756749890181416147, guid: 200e2892f989c434cad16124921d1f59,
         type: 3}
       propertyPath: m_StaticEditorFlags
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: -3756749890181416147, guid: 200e2892f989c434cad16124921d1f59,
+        type: 3}
+      propertyPath: m_TagString
+      value: Cave
+      objectReference: {fileID: 0}
     - target: {fileID: 8133949063677518695, guid: 200e2892f989c434cad16124921d1f59,
         type: 3}
       propertyPath: m_StaticEditorFlags
       value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8133949063677518695, guid: 200e2892f989c434cad16124921d1f59,
+        type: 3}
+      propertyPath: m_TagString
+      value: Cave
       objectReference: {fileID: 0}
     - target: {fileID: 4229242532500969494, guid: 200e2892f989c434cad16124921d1f59,
         type: 3}
       propertyPath: m_StaticEditorFlags
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 4229242532500969494, guid: 200e2892f989c434cad16124921d1f59,
+        type: 3}
+      propertyPath: m_TagString
+      value: Cave
+      objectReference: {fileID: 0}
     - target: {fileID: -6143188562481930087, guid: 200e2892f989c434cad16124921d1f59,
         type: 3}
       propertyPath: m_StaticEditorFlags
       value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: -6143188562481930087, guid: 200e2892f989c434cad16124921d1f59,
+        type: 3}
+      propertyPath: m_TagString
+      value: Cave
       objectReference: {fileID: 0}
     - target: {fileID: -1590551169296588775, guid: 200e2892f989c434cad16124921d1f59,
         type: 3}
       propertyPath: m_StaticEditorFlags
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: -1590551169296588775, guid: 200e2892f989c434cad16124921d1f59,
+        type: 3}
+      propertyPath: m_TagString
+      value: Cave
+      objectReference: {fileID: 0}
     - target: {fileID: -4698472540240123031, guid: 200e2892f989c434cad16124921d1f59,
         type: 3}
       propertyPath: m_StaticEditorFlags
       value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: -4698472540240123031, guid: 200e2892f989c434cad16124921d1f59,
+        type: 3}
+      propertyPath: m_TagString
+      value: Cave
       objectReference: {fileID: 0}
     - target: {fileID: -2212588340778430958, guid: 200e2892f989c434cad16124921d1f59,
         type: 3}
       propertyPath: m_StaticEditorFlags
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: -2212588340778430958, guid: 200e2892f989c434cad16124921d1f59,
+        type: 3}
+      propertyPath: m_TagString
+      value: Cave
+      objectReference: {fileID: 0}
     - target: {fileID: 6689132255885839946, guid: 200e2892f989c434cad16124921d1f59,
         type: 3}
       propertyPath: m_StaticEditorFlags
       value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6689132255885839946, guid: 200e2892f989c434cad16124921d1f59,
+        type: 3}
+      propertyPath: m_TagString
+      value: Cave
       objectReference: {fileID: 0}
     - target: {fileID: 6991765567039439991, guid: 200e2892f989c434cad16124921d1f59,
         type: 3}
       propertyPath: m_StaticEditorFlags
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 6991765567039439991, guid: 200e2892f989c434cad16124921d1f59,
+        type: 3}
+      propertyPath: m_TagString
+      value: Cave
+      objectReference: {fileID: 0}
     - target: {fileID: -2310741395592434113, guid: 200e2892f989c434cad16124921d1f59,
         type: 3}
       propertyPath: m_StaticEditorFlags
       value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: -2310741395592434113, guid: 200e2892f989c434cad16124921d1f59,
+        type: 3}
+      propertyPath: m_TagString
+      value: Cave
       objectReference: {fileID: 0}
     - target: {fileID: 4219729747086454231, guid: 200e2892f989c434cad16124921d1f59,
         type: 3}
       propertyPath: m_StaticEditorFlags
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 4219729747086454231, guid: 200e2892f989c434cad16124921d1f59,
+        type: 3}
+      propertyPath: m_TagString
+      value: Cave
+      objectReference: {fileID: 0}
     - target: {fileID: 3322671998742209384, guid: 200e2892f989c434cad16124921d1f59,
         type: 3}
       propertyPath: m_StaticEditorFlags
       value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3322671998742209384, guid: 200e2892f989c434cad16124921d1f59,
+        type: 3}
+      propertyPath: m_TagString
+      value: Cave
       objectReference: {fileID: 0}
     - target: {fileID: 8151383637795501640, guid: 200e2892f989c434cad16124921d1f59,
         type: 3}
       propertyPath: m_StaticEditorFlags
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 8151383637795501640, guid: 200e2892f989c434cad16124921d1f59,
+        type: 3}
+      propertyPath: m_TagString
+      value: Cave
+      objectReference: {fileID: 0}
     - target: {fileID: -6348744316745623850, guid: 200e2892f989c434cad16124921d1f59,
         type: 3}
       propertyPath: m_StaticEditorFlags
       value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: -6348744316745623850, guid: 200e2892f989c434cad16124921d1f59,
+        type: 3}
+      propertyPath: m_TagString
+      value: Cave
       objectReference: {fileID: 0}
     - target: {fileID: -649691065296767811, guid: 200e2892f989c434cad16124921d1f59,
         type: 3}
       propertyPath: m_StaticEditorFlags
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: -649691065296767811, guid: 200e2892f989c434cad16124921d1f59,
+        type: 3}
+      propertyPath: m_TagString
+      value: Cave
+      objectReference: {fileID: 0}
     - target: {fileID: -3663630367415914268, guid: 200e2892f989c434cad16124921d1f59,
         type: 3}
       propertyPath: m_StaticEditorFlags
       value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: -3663630367415914268, guid: 200e2892f989c434cad16124921d1f59,
+        type: 3}
+      propertyPath: m_TagString
+      value: Cave
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 200e2892f989c434cad16124921d1f59,
         type: 3}
@@ -9044,10 +9134,10 @@ MonoBehaviour:
   caveNumberPrefab: {fileID: 6284823958985013416, guid: a5c98f22437f9aa49b475295f2d4f630,
     type: 3}
   bonfire: {fileID: 1034676518}
-  defaultPopulation: 2000
-  maxPopulation: 6000
+  defaultPopulation: 100
+  maxPopulation: 500
   population: 0
-  increaseSpeed: 6
+  increaseSpeed: 4.2
   isDefault: 0
 --- !u!1 &2145890789
 GameObject:

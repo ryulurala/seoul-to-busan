@@ -73,7 +73,7 @@
     <Compile Include="Assets\Scripts\ParticleSystemDestroyer.cs" />
     <Compile Include="Assets\Scripts\ParticleSystemMultiplier.cs" />
     <Compile Include="Assets\Scripts\PersonManager.cs" />
-    <Compile Include="Assets\Scripts\TitleClick.cs" />
+    <Compile Include="Assets\Scripts\Roullete.cs" />
     <Compile Include="Assets\Scripts\Water.cs" />
     <None Include="Assets\Materials\Water Shader\FXWaterPro.shader" />
     <Reference Include="Unity.Timeline.Editor">

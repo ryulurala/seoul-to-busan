@@ -32,6 +32,8 @@ public class CaveDefault : MonoBehaviour
     public bool isDefault;
     private bool isFire = false;
 
+    bool isTextColoring;
+
     Camera mCamera;
 
     // Start is called before the first frame update
@@ -41,6 +43,11 @@ public class CaveDefault : MonoBehaviour
         mCamera = Camera.main;
         caveNumber = Instantiate(caveNumberPrefab, this.transform.position, Quaternion.identity, caveNumberList.transform);
         caveNumber.GetComponent<BarController>().maxNumber = maxPopulation;
+
+        // Default일 때
+        caveNumber.GetComponentInChildren<Text>().color = Color.white;
+        caveNumber.GetComponent<Image>().enabled = false;
+        caveNumber.GetComponentsInChildren<Image>()[1].enabled = false;
     }
 
     // Update is called once per frame
@@ -61,11 +68,9 @@ public class CaveDefault : MonoBehaviour
                 defaultPopulation -= population;
                 population = 0;
             }
+
             caveNumber.GetComponentInChildren<Text>().text = defaultPopulation.ToString();
-            caveNumber.GetComponentInChildren<Text>().color = Color.white;
-            caveNumber.GetComponents<Image>()[0].enabled = false;
-            caveNumber.GetComponentsInChildren<Image>()[1].enabled = false;
-            
+
             caveNumber.transform.position = mCamera.WorldToScreenPoint(this.transform.position + new Vector3(0, 0.6f, 0));
         }
 
@@ -76,10 +81,15 @@ public class CaveDefault : MonoBehaviour
             {
                 population += (int)(10.0f * increaseSpeed * Time.deltaTime);
 
-                caveNumber.GetComponents<Image>()[0].enabled = true;
-                caveNumber.GetComponentsInChildren<Image>()[1].enabled = true;
+                if (!isTextColoring)
+                {
+                    caveNumber.GetComponents<Image>()[0].enabled = true;
+                    caveNumber.GetComponentsInChildren<Image>()[1].enabled = true;
+                    
+                    caveNumber.GetComponentInChildren<Text>().color = Color.cyan;
+                }
+
                 caveNumber.GetComponentInChildren<Text>().text = population.ToString();
-                caveNumber.GetComponentInChildren<Text>().color = Color.cyan;
                 caveNumber.transform.position = mCamera.WorldToScreenPoint(this.transform.position + new Vector3(0, 0.6f, 0));
 
                 if (!isFire)

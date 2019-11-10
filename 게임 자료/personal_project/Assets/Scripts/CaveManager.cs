@@ -23,6 +23,7 @@ public class CaveManager : MonoBehaviour
         {
             caveList.Add(GameObject.FindGameObjectsWithTag("Cave")[i]);
         }
+        StartCoroutine("OneTime");
     }
 
     // Update is called once per frame
@@ -52,6 +53,40 @@ public class CaveManager : MonoBehaviour
             landNumber.text = totalLand.ToString();
             totalPopulation = 0;
             totalLand = 0;
+        }
+        
+    }
+
+    IEnumerator OneTime()
+    {
+        Debug.Log("OneTime");
+        yield return new WaitForSeconds(1f);
+        switch (Roullete.StartCave)
+        {
+            case 0:
+                caveList[6].GetComponent<CaveDefault>().isDefault = false;
+                break;
+            case 1:
+                caveList[1].GetComponent<CaveDefault>().isDefault = false;
+                break;
+            case 2:
+                caveList[2].GetComponent<CaveDefault>().isDefault = false;
+                break;
+            case 3:
+                caveList[12].GetComponent<CaveDefault>().isDefault = false;
+                break;
+            case 4:
+                caveList[13].GetComponent<CaveDefault>().isDefault = false;
+                break;
+            case 5:
+                caveList[9].GetComponent<CaveDefault>().isDefault = false;
+                break;
+            case 6:
+                caveList[8].GetComponent<CaveDefault>().isDefault = false;
+                break;
+            case 7:
+                caveList[7].GetComponent<CaveDefault>().isDefault = false;
+                break;
         }
     }
 }
