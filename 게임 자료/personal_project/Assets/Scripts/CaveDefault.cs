@@ -44,10 +44,7 @@ public class CaveDefault : MonoBehaviour
         caveNumber = Instantiate(caveNumberPrefab, this.transform.position, Quaternion.identity, caveNumberList.transform);
         caveNumber.GetComponent<BarController>().maxNumber = maxPopulation;
 
-        // Default일 때
-        caveNumber.GetComponentInChildren<Text>().color = Color.white;
-        caveNumber.GetComponent<Image>().enabled = false;
-        caveNumber.GetComponentsInChildren<Image>()[1].enabled = false;
+        
     }
 
     // Update is called once per frame
@@ -56,7 +53,11 @@ public class CaveDefault : MonoBehaviour
         // Default일 때
         if (isDefault)
         {
-            
+
+            caveNumber.GetComponentInChildren<Text>().color = Color.white;
+            caveNumber.GetComponent<Image>().enabled = false;
+            caveNumber.GetComponentsInChildren<Image>()[1].enabled = false;
+
             if (population > defaultPopulation)
             {
                 population -= defaultPopulation;
@@ -66,31 +67,26 @@ public class CaveDefault : MonoBehaviour
             else
             {
                 defaultPopulation -= population;
-                population = 0;
             }
 
             caveNumber.GetComponentInChildren<Text>().text = defaultPopulation.ToString();
-
-            caveNumber.transform.position = mCamera.WorldToScreenPoint(this.transform.position + new Vector3(0, 0.6f, 0));
+        
         }
 
         // Default 아닐 때
-        else if (!isDefault)
+        if (!isDefault)
         {
+            if (!isTextColoring)
+            {
+                caveNumber.GetComponents<Image>()[0].enabled = true;
+                caveNumber.GetComponentsInChildren<Image>()[1].enabled = true;
+
+                caveNumber.GetComponentInChildren<Text>().color = Color.cyan;
+            }
+
             if (population < maxPopulation)
             {
                 population += (int)(10.0f * increaseSpeed * Time.deltaTime);
-
-                if (!isTextColoring)
-                {
-                    caveNumber.GetComponents<Image>()[0].enabled = true;
-                    caveNumber.GetComponentsInChildren<Image>()[1].enabled = true;
-                    
-                    caveNumber.GetComponentInChildren<Text>().color = Color.cyan;
-                }
-
-                caveNumber.GetComponentInChildren<Text>().text = population.ToString();
-                caveNumber.transform.position = mCamera.WorldToScreenPoint(this.transform.position + new Vector3(0, 0.6f, 0));
 
                 if (!isFire)
                 {
@@ -98,6 +94,12 @@ public class CaveDefault : MonoBehaviour
                     isFire = true;
                 }
             }
+            else
+            {
+                population = maxPopulation;
+            }
+            caveNumber.GetComponentInChildren<Text>().text = population.ToString();
         }
+        caveNumber.transform.position = mCamera.WorldToScreenPoint(this.transform.position + new Vector3(0, 0.6f, 0));
     }
 }
