@@ -50,10 +50,12 @@ public class CameraSwitch : MonoBehaviour
                 {
                     buttons[i].GetComponent<Text>().text = pManager.GetComponent<PersonManager>().rMap[pCnt-i-1] + "\n"
                         + pManager.GetComponent<PersonManager>().dMap[pCnt - i - 1] + "\n(" + pManager.GetComponent<PersonManager>().mNumberList[pCnt - i - 1].GetComponent<Text>().text+")";
+                    buttons[i].GetComponentInChildren<Image>().enabled = true;
                 }
                 for(int j=i; j<5; j++)
                 {
                     buttons[j].GetComponentInChildren<Text>().text = null;
+                    buttons[j].GetComponentInChildren<Image>().enabled = false;
                 }
             }
             else
@@ -62,6 +64,7 @@ public class CameraSwitch : MonoBehaviour
                 {
                     buttons[i].GetComponent<Text>().text = pManager.GetComponent<PersonManager>().rMap[pCnt - i - 1] + "\n"
                          + pManager.GetComponent<PersonManager>().dMap[pCnt - i - 1] + "\n(" + pManager.GetComponent<PersonManager>().mNumberList[pCnt - i - 1].GetComponent<Text>().text + ")";
+                    buttons[i].GetComponentInChildren<Image>().enabled = true;
                 }
             }
         }
