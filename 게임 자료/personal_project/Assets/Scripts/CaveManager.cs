@@ -64,28 +64,28 @@ public class CaveManager : MonoBehaviour
         switch (Roullete.StartCave)
         {
             case 0:
-                caveList[6].GetComponent<CaveDefault>().isDefault = false;
+                caveList[6].GetComponent<CaveDefault>().isDefault = false; // 경기
                 break;
             case 1:
-                caveList[1].GetComponent<CaveDefault>().isDefault = false;
+                caveList[1].GetComponent<CaveDefault>().isDefault = false; // 충북
                 break;
             case 2:
-                caveList[2].GetComponent<CaveDefault>().isDefault = false;
+                caveList[2].GetComponent<CaveDefault>().isDefault = false; // 충남
                 break;
             case 3:
-                caveList[12].GetComponent<CaveDefault>().isDefault = false;
+                caveList[12].GetComponent<CaveDefault>().isDefault = false; // 전북
                 break;
             case 4:
-                caveList[13].GetComponent<CaveDefault>().isDefault = false;
+                caveList[14].GetComponent<CaveDefault>().isDefault = false; // 전남
                 break;
             case 5:
-                caveList[9].GetComponent<CaveDefault>().isDefault = false;
+                caveList[9].GetComponent<CaveDefault>().isDefault = false; // 경남
                 break;
             case 6:
-                caveList[8].GetComponent<CaveDefault>().isDefault = false;
+                caveList[8].GetComponent<CaveDefault>().isDefault = false; // 경북
                 break;
             case 7:
-                caveList[7].GetComponent<CaveDefault>().isDefault = false;
+                caveList[7].GetComponent<CaveDefault>().isDefault = false; // 강원
                 break;
         }
     }

@@ -67,6 +67,7 @@ public class CaveDefault : MonoBehaviour
             else
             {
                 defaultPopulation -= population;
+                population = 0;
             }
 
             caveNumber.GetComponentInChildren<Text>().text = defaultPopulation.ToString();
